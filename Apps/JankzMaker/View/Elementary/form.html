@@ -1,0 +1,50 @@
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <a class="btn-primary btn-sm" href="javascript:location.replace(location.href);">
+                        <i class="fa fa-refresh"></i></a>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="form_basic.html#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="form_basic.html#">选项1</a>
+                                </li>
+                                <li><a href="form_basic.html#">选项2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" class="form-horizontal" action="{{$post_url}}">
+                            <volist name="form_items" id="item">
+                                <switch name="item.type">
+                                    <case value="text">
+                                        <include file="Apps/JankzMaker/View/Elementary/text.html" />
+                                    </case>
+                                    <case value="select">
+                                        <include file="Apps/JankzMaker/View/Elementary/select.html" />
+                                    </case>
+                                    <case value="textarea">
+                                        <include file="Apps/JankzMaker/View/Elementary/select.html" />
+                                    </case>
+                                </switch>
+                            </volist>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                                    <button class="btn btn-primary" type="button">保存内容</button>
+                                    <button class="btn btn-white" type="submit">取消</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>

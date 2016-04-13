@@ -1,0 +1,9 @@
+<div class="field">
+    <label>{{$item.title}}</label>
+    <select class="ui dropdown" name="{{$item.name}}">
+        <foreach name="item.conf.info" item="select">
+        <option value="{{$select.id}}" <eq name="item.value" value="$select.id">selected</eq>  >{{$select.title}}</option>
+        </foreach>
+    </select>
+</div>
+<!-- <div class="ui divider"></div> -->
