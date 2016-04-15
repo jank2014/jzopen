@@ -1,11 +1,11 @@
 <?php
-/**
- *
- * @authors jankz (jankz@jankz.com)
- * @date    2016-03-29 16:28:50
- * @qq   979890264
- * @version v1.0
- */
+// +----------------------------------------------------------------------
+// | JankzMaker [ Just Do It And Think It ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2015 http://www.jankz.com All rights reserved.
+// +----------------------------------------------------------------------
+// | Author: jankz <jankz@jankz.com> <http://www.jankz.com>
+// +----------------------------------------------------------------------
 namespace Admin\Controller;
 use Think\Controller;
 
@@ -20,6 +20,7 @@ class PublicController extends Controller
 	 */
 	public function login()
 	{
+		// var_dump(session('step'));die;
 		if(!empty($_POST)){
 			$user = M('User');
 	        $username = trim(I('username'));

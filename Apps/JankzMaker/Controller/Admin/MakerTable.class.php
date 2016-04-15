@@ -1,10 +1,11 @@
 <?php
-/**
- * @authors jankz (jankz@jankz.com)
- * @date    2016-01-07 17:27:18
- * @qq   979890264
- * @version v1.0
- */
+// +----------------------------------------------------------------------
+// | JankzMaker [ Just Do It And Think It ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2015 http://www.jankz.com All rights reserved.
+// +----------------------------------------------------------------------
+// | Author: jankz <jankz@jankz.com> <http://www.jankz.com>
+// +----------------------------------------------------------------------
 namespace JankzMaker\Controller\Admin;
 use Think\Controller;
 class MakerTable extends Controller{
@@ -96,7 +97,7 @@ class MakerTable extends Controller{
 				$btn['name'] = '启用';
 				$btn['select'] ='ids';
 				$btn['href'] =U(MODULE_NAME.'/'.CONTROLLER_NAME.'/resume');
-				$btn['btn_class'] = 'gray';
+				$btn['btn_class'] = 'gray is_ajax_post';
 				$btn['i_class'] = 'check';
 				$btns['second'] =$btn;
 				break;
@@ -104,7 +105,7 @@ class MakerTable extends Controller{
 				$btn['name'] = '禁用';
 				$btn['select'] ='ids';
 				$btn['href'] =U(MODULE_NAME.'/'.CONTROLLER_NAME.'/forbid');
-				$btn['btn_class'] = 'yellow';
+				$btn['btn_class'] = 'yellow is_ajax_post';
 				$btn['i_class'] = 'ban';
 				$btns['second'] =$btn;
 				break;
@@ -112,7 +113,7 @@ class MakerTable extends Controller{
 				$btn['name'] = '删除';
 				$btn['select'] ='ids';
 				$btn['href'] =U(MODULE_NAME.'/'.CONTROLLER_NAME.'/delete');
-				$btn['btn_class'] = 'red';
+				$btn['btn_class'] = 'red is_ajax_post';
 				$btn['i_class'] = 'trash';
 				$btns['second'] =$btn;
 				break;
@@ -206,9 +207,9 @@ class MakerTable extends Controller{
 						break;
 					case 'status':
 						if($value[$list['name']]==1){
-							$value[$list['name']]='<i class="checkmark icon teal"></i>';
+							$value[$list['name']]='<i class="fa fa-unlock teal"></i>';
 						}else{
-							$value[$list['name']]='<i class="red ban icon"></i>';
+							$value[$list['name']]='<i class="red fa fa-lock"></i>';
 						}
 						break;
 					case 'icon':

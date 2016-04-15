@@ -1,4 +1,11 @@
 <?php
+// +----------------------------------------------------------------------
+// | JankzMaker [ Just Do It And Think It ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2015 http://www.jankz.com All rights reserved.
+// +----------------------------------------------------------------------
+// | Author: jankz <jankz@jankz.com> <http://www.jankz.com>
+// +----------------------------------------------------------------------
 namespace User\Controller;
 use Think\Controller;
 
@@ -20,7 +27,7 @@ class GroupController extends CommonController{
 			'update_time'=>'上次修改时间'
 			);
 		$page = $_GET['page'];
-		$group = M('UserGroup');
+		$group = M('Group');
 		$count = $group->count();
 		$page_list = ceil($count /10 );
 		$info = $group->where(array('status'=>1))->select();
@@ -46,7 +53,7 @@ class GroupController extends CommonController{
 	public function add()
 	{
 		if(!empty($_POST)){
-			$info = D('UserGroup');
+			$info = D('Group');
 			$info->create();
 			if($info->create()){
 				$res = $info->add();

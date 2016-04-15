@@ -25,9 +25,8 @@ class MenuController extends CommonController{
 		$page =$_GET['page'];
 		$system  = M('Menu');
 		$count = $system->count();
-		$jz_page = (C('JZ_TABLE_PAGE'));
-		$page_list = ceil($count/ $jz_page);
-		$info = $system->page($page,$jz_page)->select();
+		$page_list = ceil($count/10);
+		$info = $system->page($page,10)->select();
 
 		//调用表格制作函数 返回make_table 用来拆分$tbale 的key 和 value
 		$make_table=makeTable($table);

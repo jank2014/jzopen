@@ -43,7 +43,7 @@
     </style>
     <block name="my_css"></block>
 
-    <script src="__PUBLIC__/libs/jquery/jquery-1.11.3.min.js"></script>
+     <script src="__PUBLIC__/libs/jquery/jquery-1.11.3.min.js"></script>
     <script src="__PUBLIC__/libs/semantic/v2.1.7/components/form.js"></script>
     <script src="__PUBLIC__/libs/semantic/v2.1.7/components/transition.js"></script>
     <script src="__PUBLIC__/libs/semantic/v2.1.7/components/dropdown.js"></script>
@@ -88,6 +88,29 @@
             </div>
             <ul class="sidebar-menu">
                 <li class="header">Menu</li>
+                <li class="treeview">
+                    <a href="#">
+                        <i class="fa fa-share"></i> <span>Multilevel</span>
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                        <li>
+                            <a href="#"><i class="fa fa-circle-o"></i> Level One <i class="fa fa-angle-left pull-right"></i></a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
+                                <li>
+                                    <a href="#"><i class="fa fa-circle-o"></i> Level Two <i class="fa fa-angle-left pull-right"></i></a>
+                                    <ul class="treeview-menu">
+                                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                        <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
+                    </ul>
+                </li>
                  <volist name="allmenu" id="first_menu">
                         <if condition="$first_menu.pid eq 0">
                         <li class="treeview <?php if($breadcrumb[0]['title'] == $first_menu['title']) echo 'active';?>">
@@ -164,7 +187,7 @@
     </div>
     <footer class="main-footer">
         <div class="pull-right hidden-xs">
-            <b>Version</b> 1.0
+            <b>Version</b> 2.3.3
         </div>
         <strong>Copyright &copy; 2014-2015 <a href="http://jzopen.com">Jzopen</a>.</strong> All rights
         reserved.
@@ -196,7 +219,7 @@
 <script src="__PUBLIC__/libs/layer/v2.1/layer.js"></script>
 <script src="__PUBLIC__/libs/laydate/v1.1/laydate.js"></script>
 <script src="__PUBLIC__/libs/laypage/v1.3/laypage.js"></script>
-<!-- <script src="__PUBLIC__/libs/pace/v1.0.2/pace.min.js"></script> -->
+<script src="__PUBLIC__/libs/pace/v1.0.2/pace.min.js"></script>
 
 <script src="__PUBLIC__/admin/js/demo.js"></script>
 

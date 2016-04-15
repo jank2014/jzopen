@@ -21,7 +21,6 @@ class AuthController extends CommonController{
 			'condition'	=>'规则表达式',
 			);
 		$count = M('AuthRule')->count();
-		$jz_page = int(C('JZ_TABLE_PAGE'));
 		$page_list = ceil($count/10);
 		$info = M('AuthRule')->where(array('status'=>1))->page($page,10)->select();
 		$make_table=makeTable($table);

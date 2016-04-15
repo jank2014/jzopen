@@ -1,4 +1,11 @@
 <?php
+// +----------------------------------------------------------------------
+// | JankzMaker [ Just Do It And Think It ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2015 http://www.jankz.com All rights reserved.
+// +----------------------------------------------------------------------
+// | Author: jankz <jankz@jankz.com> <http://www.jankz.com>
+// +----------------------------------------------------------------------
 namespace User\Model;
 use Think\Model;
 
@@ -17,7 +24,7 @@ array(
      ......
 );
  */
-	protected $tableName = 'user_group';
+	protected $tableName = 'group';
 	/**
 	 * [用户组创建自动验证]
 	 * @var array

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/libs/wang/css/wangEditor.min.css">
+    <style type="text/css">
+        #editor-trigger {
+            height: 200px;
+            max-height: 600px;
+        }
+        .container {
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+<form action="{{:U(test2)}}" method="post" accept-charset="utf-8">
+
+<p>wangEditor2.0 支持 IE8 浏览器</p>
+     <textarea id="editor-trigger" style="display:none;" name="content">
+            <p>请输入内容...</p>
+        </textarea>
+<input type="text" name="pass" value="12" placeholder="">
+</form>
+
+<button type="" class="is_ajax">提交</button>
+<button type="" class="ajax_get">获得</button>
+<div id="jz_test">
+
+</div>
+<h1>{{ $info.content|htmlspecialchars_decode|stripslashes}}
+</h1>
+
+<script src="__PUBLIC__/libs/jquery/jquery-2.1.4.js"></script>
+<script src="__PUBLIC__/libs/wang/js/wangEditor.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('.is_ajax').click(function(){
+			var html = editor.$txt.html();
+
+			$.post($('form').attr('action'),$('form').serialize(),function(data,status,xhr){
+				if(data.status==1){
+					$('#jz_test').html(data.info.pass);
+
+				}
+			});
+		})
+        $('.ajax_get').click(function(){
+            $
+        });
+	});
+</script>
+ <script type="text/javascript">
+        // 阻止输出log
+        // wangEditor.config.printLog = false;
+        
+        var editor = new wangEditor('editor-trigger');
+
+        // 上传图片
+        editor.config.uploadImgUrl = '/jz/Uploads';
+
+        // 跨域上传
+        // editor.config.uploadImgUrl = 'http://localhost:8012/upload';
+
+        // 第三方上传
+        // editor.config.customUpload = true;
+        // editor.config.menus = [
+        //     'img',
+        //     'insertcode',
+        //     'eraser',
+        //     'fullscreen'
+        // ];
+
+        // onchange 事件
+        // editor.onchange = function () {
+        //     console.log(this.$txt.html());
+        // };
+
+        // 取消过滤js
+        // editor.config.jsFilter = false;
+
+        // 取消粘贴过来
+        // editor.config.pasteFilter = false;
+
+        // 设置 z-index
+        // editor.config.zindex = 20000;
+
+        // 语言
+        // editor.config.lang = wangEditor.langs['en'];
+
+        // 自定义菜单UI
+        // editor.UI.menus.bold = {
+        //     normal: '<button style="font-size:20px; margin-top:5px;">B</button>',
+        //     selected: '.selected'
+        // };
+        // editor.UI.menus.italic = {
+        //     normal: '<button style="font-size:20px; margin-top:5px;">I</button>',
+        //     selected: '<button style="font-size:20px; margin-top:5px;"><i>I</i></button>'
+        // };
+        editor.create();
+    </script>
+</body>
+</html>

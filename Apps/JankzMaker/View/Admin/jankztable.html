@@ -76,7 +76,7 @@
                         <volist name ="tbody" id="tbody">
                             <tr>
                                 <td>
-                                    <input class="ids" type="checkbox" value="{{$tbody['id']}}" name="ids"></td>
+                                    <input class="ids" type="checkbox" value="{{$tbody['id']}}" name="ids[]"></td>
                                 <volist name ="tbody_list" id="list">
                                     <td>{{$tbody[$list['name']]}}</td>
                                 </volist>
@@ -172,6 +172,21 @@
             }
         });
     });
-</script>
 
+
+</script>
+<script>
+    $(document).ready(function(){
+        $(".is_ajax_post").click(function(){
+            $.post($(this).attr('href'),$('.ids').serialize(), function(data, textStatus, xhr) {
+                layer.msg(data.info,{offset:'100px'},function () {
+                   if(data.status ==1){
+                      location.href = data.url;
+                   }
+                })
+            });
+            return !1;//不让页面刷新
+        });
+    });
+</script>
 </block>

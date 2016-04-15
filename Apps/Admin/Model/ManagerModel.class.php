@@ -1,8 +1,29 @@
 <?php
+// +----------------------------------------------------------------------
+// | JankzMaker [ Just Do It And Think It ]
+// +----------------------------------------------------------------------
+// | Copyright (c) 2015 http://www.jankz.com All rights reserved.
+// +----------------------------------------------------------------------
+// | Author: jankz <jankz@jankz.com> <http://www.jankz.com>
+// +----------------------------------------------------------------------
 namespace Admin\Model;
-use Think\Model\RelationModel;
+use Think\Model;
 
-class ManagerModel extends RelationModel{
+class ManagerModel extends Model{
+/**
+ * [自动验证规则 来自thinkphp官方手册]
+ * array(
+     array(验证字段1,验证规则,错误提示,[验证条件,附加规则,验证时间]),
+     array(验证字段2,验证规则,错误提示,[验证条件,附加规则,验证时间]),
+);
+
+* [自动完成规则 来自thinkphp官方手册]
+array(
+     array(完成字段1,完成规则,[完成条件,附加规则]),
+     array(完成字段2,完成规则,[完成条件,附加规则]),
+     ......
+);
+ */
 	protected $_validate = array(
 		array('username','require','用户名不能为空', 0,'unique',1),//新增验证
 		array('password','require','密码不能为空',0,'regex',1),

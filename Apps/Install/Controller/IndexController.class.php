@@ -153,6 +153,7 @@ class IndexController extends Controller{
 
         //创建配置文件
         $conf = write_config($db_config, $auth);
+
         $admin_info = session('admin_info');
         $username = $admin_info["username"];
         $password = user_md5($admin_info["password"]);

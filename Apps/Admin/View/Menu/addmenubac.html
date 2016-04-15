@@ -1,0 +1,92 @@
+<extend name="Public:main"/>
+<block name="title">
+    <title>添加菜单</title>
+</block>
+<block name="my_css">
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/Common/layer-v2.1/layer/skin/layer.css">
+</block>
+<block name="main">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <a class="btn btn-primary btn-xs radius" href="javascript:location.replace(location.href);" title="刷新" >
+                        <i class="fa fa-refresh"></i></a>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form class="form-horizontal is_post">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">菜单名称</label>
+
+                                <div class="col-sm-5">
+                                    <input type="text" class="form-control" name="title">
+                                </div>
+                                <label class="col-sm-1 control-label">排序等级</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class="form-control" name="sort">
+                                </div>
+
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">URL</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="url">
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">ICON</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="icon">
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">父ID</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control m-b" name="pid">
+                                        <volist name="info" id="vo">
+                                            <option value="{{$vo.id}}">{{$vo.title}}</option>
+                                        </volist>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="hr-line-dashed"></div>
+
+                            <button type="button" class="btn btn-primary btn-block">提交</button>
+                            <div class="hr-line-dashed"></div>
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</block>
+
+<block name="my_js">
+    <!-- 自定义js -->
+    <script type="text/javascript">
+    $(document).ready(function(){
+          $("button[type=button]").click(function(){
+            $.ajax({
+                type:'POST',
+                url:'__URL__/addmenu',
+                data:$("form").serialize(),
+                success:function(response,status,xhr){
+                   layer.msg(response.info);
+                }
+            });
+        });
+    });
+    </script>
+</block>
