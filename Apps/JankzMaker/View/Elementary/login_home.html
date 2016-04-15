@@ -1,0 +1,23 @@
+	<div class="middle-box text-center loginscreen  animated fadeInDown">
+        <div>
+            <div>
+
+                <h1 class="logo-name"></h1>
+
+            </div>
+            <h3>欢迎登陆</h3>
+
+            <form class="m-t" role="form" action="{{:U('Home/Login/index')}}" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="用户名" required="" name="username">
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control" placeholder="密码" required="" name="password">
+                </div>
+                <button type="submit" class="btn btn-primary block full-width m-b">登 录</button>
+                <p class="text-muted text-center"> <a href="login.html#"><small>忘记密码了？</small></a> | <a href="{{:U('Login/register')}}">注册一个新账号</a>
+                </p>
+
+            </form>
+        </div>
+    </div>
