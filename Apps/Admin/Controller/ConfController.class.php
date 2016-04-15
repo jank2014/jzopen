@@ -26,14 +26,14 @@ class ConfController extends CommonController
 			'conf'		=>'conf',
 			// 'sort'		=>'排序值',
 			'conf_group'=>'组',
-			// 'status'	=>'状态',
+			'status'	=>'状态',
 			// 'update_time'=>'上次修改时间',
 			);
 		$page = $_GET['page'];
 		$conf = M('Conf');
 		$count = $conf->count();
 		$page_list = ceil($count/10);
-		$info = $conf->where(array('status'=>1))->page($page,10)->select();
+		$info = $conf->page($page,10)->select();
 		$make_table = makeTable($table);
 		$jankzmaker = new \JankzMaker\Controller\Admin\MakerTable();
 		$jankzmaker->setMetaTitle('配置列表')
@@ -130,7 +130,7 @@ class ConfController extends CommonController
 		$info = M('Conf');
 		$res = $info->delete($id);
 		if($res){
-			$this->success('删除成功',U('Menu/menulist'));
+			$this->success('删除成功',U('Conf/index'));
 		}else{
 			$this->error('删除失败');
 		}
@@ -149,7 +149,7 @@ class ConfController extends CommonController
 		$info>create();
 		$info = $info->save();
 		if($info){
-			$this->success('锁定成功',U('Menu/menulist'));
+			$this->success('锁定成功',U('Conf/index'));
 		}else{
 			$this->error('锁定失败');
 		}
@@ -169,7 +169,7 @@ class ConfController extends CommonController
 		$info->create();
 		$res = $info->save();
 		if($info){
-			$this->success('开启成功',U('Menu/menulist'));
+			$this->success('开启成功',U('Conf/index'));
 		}else{
 			$this->error('开启失败');
 		}

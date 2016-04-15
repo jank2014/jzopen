@@ -96,7 +96,7 @@ class MakerTable extends Controller{
 			case 'resume':
 				$btn['name'] = '启用';
 				$btn['select'] ='ids';
-				$btn['href'] =U(MODULE_NAME.'/'.CONTROLLER_NAME.'/resume');
+				$btn['href'] =U(MODULE_NAME.'/'.CONTROLLER_NAME.'/setResume');
 				$btn['btn_class'] = 'gray is_ajax_post';
 				$btn['i_class'] = 'check';
 				$btns['second'] =$btn;
@@ -104,7 +104,7 @@ class MakerTable extends Controller{
 			case 'forbid':
 				$btn['name'] = '禁用';
 				$btn['select'] ='ids';
-				$btn['href'] =U(MODULE_NAME.'/'.CONTROLLER_NAME.'/forbid');
+				$btn['href'] =U(MODULE_NAME.'/'.CONTROLLER_NAME.'/setForbid');
 				$btn['btn_class'] = 'yellow is_ajax_post';
 				$btn['i_class'] = 'ban';
 				$btns['second'] =$btn;
@@ -112,7 +112,7 @@ class MakerTable extends Controller{
 			case 'delete':
 				$btn['name'] = '删除';
 				$btn['select'] ='ids';
-				$btn['href'] =U(MODULE_NAME.'/'.CONTROLLER_NAME.'/delete');
+				$btn['href'] =U(MODULE_NAME.'/'.CONTROLLER_NAME.'/setDelete');
 				$btn['btn_class'] = 'red is_ajax_post';
 				$btn['i_class'] = 'trash';
 				$btns['second'] =$btn;

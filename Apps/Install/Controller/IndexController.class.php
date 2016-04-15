@@ -188,6 +188,7 @@ SQL;
 
         session('step', null);
         session('error', null);
+        session('db_config', null);
         $this->assign('meta_title', "完成");
         $this->display();
     }

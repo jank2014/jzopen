@@ -76,6 +76,63 @@ class CommonController extends Controller{
 		}
 
 	}
+	public function setForbid()
+	{
+
+		$url = U(MODULE_NAME.'/'.CONTROLLER_NAME.'/'.'index');
+		$ids = I('ids');
+		if($ids && is_array($ids)){
+			$info = M(CONTROLLER_NAME);
+			foreach ($ids as $key =>$value) {
+				$data['id']=intval($value);
+				$data['status'] = 0;
+				$res = $info->save($data);
+				if(!$res){
+					$this->error($info->getError());
+				}
+			}
+			$this->success('已禁用',U(MODULE_NAME.'/'.CONTROLLER_NAME.'/'.'index'));
+		}else{
+			$this->error('请选择操作数据!');
+		}
+		// var_dump($ids);
+	}
+	public function setResume()
+	{
+		$url = U(MODULE_NAME.'/'.CONTROLLER_NAME.'/'.'index');
+		$ids = I('ids');
+		if($ids && is_array($ids)){
+			$info = M(CONTROLLER_NAME);
+			foreach ($ids as $key =>$value) {
+				$data['id']=intval($value);
+				$data['status'] = 1;
+				$res = $info->save($data);
+				if(!$res){
+					$this->error($info->getError());
+				}
+			}
+			$this->success('已启用',U(MODULE_NAME.'/'.CONTROLLER_NAME.'/'.'index'));
+		}else{
+			$this->error('请选择操作数据!');
+		}
+	}
+	public function setDelete()
+	{
+		$url = U(MODULE_NAME.'/'.CONTROLLER_NAME.'/'.'index');
+		$ids = I('ids');
+		if($ids && is_array($ids)){
+			$info = M(CONTROLLER_NAME);
+			foreach ($ids as $key =>$value) {
+				$res = $info->delete(intval($value));
+				if(!$res){
+					$this->error($info->getError());
+				}
+			}
+			$this->success('已删除',U(MODULE_NAME.'/'.CONTROLLER_NAME.'/'.'index'));
+		}else{
+			$this->error('请选择操作数据!');
+		}
+	}
 
 }
 

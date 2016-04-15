@@ -1,0 +1,65 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+<head>
+    <!-- Standard Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+    
+    <title>step1</title>
+
+    <link rel="stylesheet" href="/jzopen/Public/libs/semantic/v2.1.7/semantic.css">
+    <link rel="stylesheet" href="/jzopen/Public/install/install.css"></head>
+<body>
+
+    <div class="ui fixed secondary menu">
+        <div class="header item">JankzMaker</div>
+        <div class="right menu">
+            <a href="#" class="item">官网</a>
+            <a class="item">授权</a>
+            <a class="item"></a>
+        </div>
+    </div>
+    
+    <div class="ui main text container">
+        <div class="column">
+            <div class="ui secondary pointing menu">
+                <div class="active item">安装协议</div>
+                <a class="item">环境检测</a>
+                <a class="item">参数设置</a>
+                <a class="item">开始安装</a>
+                <a class="item">完成安装</a>
+            </div>
+        </div>
+        <div class="colums steps">
+            <h6 class="ui top attached inverted header">jankzMaker安装协议</h6>
+            <div class="ui buttom attached segment">
+                <p>感谢您选择JankzMaker，希望我们的努力能为您提供一个简单、高效、卓越的轻量级产品开发框架。</p>
+
+                <p>
+                    用户须知：本协议是您与深圳楠哲科技有限公司之间关于您使用JankzMaker产品及服务的法律协议。无论您是个人或组织、盈利与否、用途如何（包括以学习和研究为目的），均需仔细阅读本协议，包括免除或者限制深圳楠哲科技有限公司责任的免责条款及对您的权利限制。请您审阅并接受或不接受本服务条款。如您不同意本服务条款及深圳楠哲科技有限公司随时对其的修改，您应不使用或主动取消JankzMaker产品。否则，您的任何对JankzMaker的相关服务的注册、登录、下载、查看等使用行为将被视为您对本服务条款全部的完全接受，包括接受深圳楠哲科技有限公司对服务条款随时所做的任何修改。
+
+            本服务条款一旦发生变更, 深圳楠哲科技有限公司将在官网上公布修改内容。修改后的服务条款一旦在网站公布即有效代替原来的服务条款。您可随时登陆官网查阅最新版服务条款。如果您选择接受本条款，即表示您同意接受协议各项条件的约束。如果您不同意本服务条款，则不能获得使用本服务的权利。您若有违反本条款规定，深圳楠哲科技有限公司有权随时中止或终止您对JankzMaker产品的使用资格并保留追究相关法律责任的权利。
+
+            在理解、同意、并遵守本协议的全部条款后，方可开始使用JankzMaker产品。您也可能与深圳楠哲科技有限公司直接签订另一书面协议，以补充或者取代本协议的全部或者任何部分。
+                </p>
+
+                <p>
+                    深圳楠哲科技有限公司拥有JankzMaker的全部知识产权，包括商标和著作权。深圳楠哲科技有限公司只允许您在遵守本协议各项条款的情况下复制、下载、安装、使用或者以其他方式受益于本软件的功能或者知识产权。
+                </p>
+
+                <a class="ui tiny teal fluid button" href="<?php echo U('step2');?>">我同意以上安装协议</a>
+                <a class="ui tiny fluid button " style="margin-top: 0.2em">不同意</a>
+
+            </div>
+            <h6 class="ui bottom attached header">版权所有 (c) 2014－2016楠哲科技有限公司 保留所有权利。</h6>
+        </div>
+    </div>
+
+    <script src="/jzopen/Public/libs/jquery/jquery-2.1.4.min.js"></script>
+    <script src="/jzopen/Public/libs/semantic/v2.1.7/semantic.min.js"></script>
+    
+</body>
+
+</html>
