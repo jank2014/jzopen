@@ -28,6 +28,14 @@ $conf = array(
     // 'TMPL_ACTION_ERROR'   => APP_PATH.'Home/View/Public/think/error.html',
     // 'TMPL_ACTION_SUCCESS' => APP_PATH.'Home/View/Public/think/success.html',
 
+    // URL配置
+    'URL_MODEL'             =>'3',
+    'URL_CASE_INSENSITIVE' => true,  // 不区分大小写
+
+    // 应用配置
+    // 'DEFAULT_MODULE'     => 'Home',
+    // 'MODULE_DENY_LIST'   => array('Common'),
+    // 'MODULE_ALLOW_LIST'  => array('Home','Install'),
     //auth配置
     'AUTH_CONFIG' => array(
         'AUTH_ON'           => true,                      // 认证开关
@@ -38,7 +46,21 @@ $conf = array(
         'AUTH_USER'         => 'jz_user'
          ),
     );
-if(is_file('./Conf/jzconf.php')){
-    return array_merge(require_once('./Conf/jzconf.php'),$conf);
+if (is_file('./Conf/jzconf.php')) {
+    $jzconfig = include './Conf/jzconf.php';  // 包含数据库连接配置
+} else {
+        $jzconfig = array(
+            'DB_TYPE'   => 'mysql',           // 数据库类型
+            'DB_HOST'   => '127.0.0.1',       // 服务器地址
+            'DB_NAME'   => 'jzopen_v1',       // 数据库名
+            'DB_USER'   => 'root',            // 用户名
+            'DB_PWD'    => '',                // 密码
+            'DB_PORT'   => '3306',            // 端口
+            'DB_PREFIX' => 'jz_',             // 数据库表前缀
+        );
 }
+return array_merge(
+    $conf,
+    $jzconfig
+    );
 
