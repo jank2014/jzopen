@@ -20,7 +20,7 @@ class MenuController extends CommonController{
     		'url'=>'链接地址',
     		'icon'=>'图表',
     		'status'=>'状态',
-    		'update_time'=>'上次修改时间',
+    		// 'update_time'=>'上次修改时间',
     		);
 		$page =$_GET['page'];
 		$system  = M('Menu');
@@ -36,12 +36,12 @@ class MenuController extends CommonController{
 				->setTbodyData($info)//总数据
 				->setTbodyList($make_table['list'])//循环列表 这里根据table设定生成
 				->setThead($make_table['thead'])//循环表头 这里根据table设定生成
-				->addRightBtn('info')
-				->addRightBtn('edit')
-				->addRightBtn('forbid')
-				->addRightBtn('resume')
-				->addRightBtn('delete')
-				->addTopBtn('add,forbid')
+				// ->addRightBtn('info')
+				// ->addRightBtn('edit')
+				// ->addRightBtn('forbid')
+				// ->addRightBtn('resume')
+				// ->addRightBtn('delete')
+				// ->addTopBtn('add,forbid')
 				->addTopBtn('delete')
 				->setPage($page_list)
 				->display();
